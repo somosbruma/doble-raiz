@@ -60,7 +60,7 @@ function configureReveals() {
     for (const entry of entries) {
       entry.target.classList.toggle('is-visible', entry.isIntersecting || entry.target.matches(':focus-within'));
     }
-  }, { threshold: 0 });
+  }, { threshold: 0, rootMargin: '0px 0px -14% 0px' });
   revealItems.forEach(element => {
     element.classList.add('reveal-item');
     revealObserver.observe(element);
