@@ -34,7 +34,7 @@
       <a href="#huevos">Nuestros huevos</a>
       <a class="nav-cta" href="#encontrarnos">Dónde encontrarnos</a>
     </div>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span>Menú</span><span class="menu-lines" aria-hidden="true"></span></button>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menú"><span class="menu-state-closed" aria-hidden="true"><img class="menu-hen" src="assets/gallina-amarilla.webp" width="26" height="26" alt=""><span class="menu-lines"></span></span><span class="menu-state-open" aria-hidden="true">✕</span></button>
     <nav id="main-nav" aria-label="Navegación principal">
       <a href="#origen">Nuestro origen</a><a href="#cuidado">El cuidado</a><a href="#huevos">Nuestros huevos</a><a class="nav-cta" href="#encontrarnos">Dónde encontrarnos</a>
     </nav>
@@ -42,11 +42,13 @@
   <main id="contenido">
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="small-rule"></span> HUEVOS DE CAMPO</p>
+        <p class="eyebrow">HUEVOS DE CAMPO</p>
         <h1 id="hero-title">Conocé el origen<br>de <em>cada huevo.</em></h1>
         <p class="hero-description">Somos Doble Raíz. Una historia compartida, una mirada consciente y mucho por contarte sobre lo que elegís llevar a tu mesa.</p>
-        <a class="button button-yellow" href="#origen">Empezá por el origen</a>
-        <a class="hero-secondary" href="#comercios">Quiero vender Doble Raíz</a>
+        <div class="hero-cta-row">
+          <a class="button button-yellow" href="#origen">Empezá por el origen</a>
+          <a class="hero-secondary" href="#comercios">Quiero vender Doble Raíz</a>
+        </div>
         <span class="hero-footnote">EL ORIGEN A LA VISTA</span>
       </div>
       <figure class="hero-picture">
@@ -61,7 +63,7 @@
       </div>
 
     </section>
-    <div class="section-wave origin-care" aria-hidden="true"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" focusable="false"><path d="M0 45 C240 115 410 0 720 42 S1160 115 1440 35 V100 H0 Z"/></svg><div class="founders-seal"><span>DOS HERMANOS</span><div class="founders-hens"><img src="assets/gallina-verde.webp" width="900" height="875" alt=""><img src="assets/gallina-amarilla.webp" width="900" height="870" alt=""></div><span>UNA MISMA RAÍZ</span></div></div>
+    <div class="section-wave origin-care" aria-hidden="true"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" focusable="false"><path d="M0 45 C240 115 410 0 720 42 S1160 115 1440 35 V100 H0 Z"/></svg><div class="founders-seal"><span>DOS HERMANOS</span><div class="founders-hens"><img src="assets/gallina-verde.webp" width="900" height="875" alt=""><img src="assets/gallina-amarilla.webp" width="900" height="870" alt=""></div><span>UNA MISMA RAIZ</span></div></div>
     <section class="care" id="cuidado" aria-labelledby="care-title">
       <div class="care-art"><span class="eyebrow">EL CUIDADO, DESDE EL ORIGEN</span><img data-scroll-art class="hen" src="assets/gallina-amarilla.webp" width="900" height="870" alt="Gallina ilustrada de Doble Raíz con trazos de crayón." loading="lazy"><span class="hand-note">Ellas son el comienzo.</span></div>
       <div class="care-copy reveal"><p class="eyebrow">LAS GALLINAS</p><h2 id="care-title">El bienestar<br>ocupa el<br><em>primer lugar.</em></h2><p class="lead">Nuestra manera de pensar el producto empieza por las gallinas.</p><p>El bienestar y el respeto por sus ciclos y su entorno forman parte de los principios de Doble Raíz.</p>
