@@ -34,7 +34,7 @@ window.matchMedia('(min-width: 761px)').addEventListener('change', () => closeMe
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 // Reveal individual content items on each entry, preserving image rotations and sticky cards.
 const revealItems = [...document.querySelectorAll(
-  'main h1, main h2, main h3, main p, main img, main figcaption, main summary, ' +
+  'main h1, main h2, main h3, main p, main img:not(.hen), main figcaption, main summary, ' +
   'main .button, main .text-link, main .hero-secondary, main .hand-note, ' +
   'main .process-num, main .values-ribbon > span, main .care-art > .eyebrow, ' +
   '.footer h3, .footer p, .footer a'
