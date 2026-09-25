@@ -50,7 +50,7 @@
 @media(max-width:760px){
   .process-stack{--stack-top:90px;--stack-gap:7px;margin:52px -9px 0}
   .process-card{min-height:clamp(440px,66svh,650px);padding:28px 24px;margin-bottom:20px;border-radius:20px}
-  .process-card h3{font-size:clamp(2.65rem,10.5vw,4.5rem);margin-bottom:20px}
+  .process-card h3{font-size:clamp(1.5rem,5.8vw,2.9rem);margin-bottom:20px;white-space:nowrap}
   .process-num{margin-bottom:10px}
 }
 /* Short viewports and reduced motion keep every step in normal reading flow. */
@@ -143,7 +143,7 @@
   .hero-cta-row{justify-content:center}
   .hero-picture{margin-left:0;border-radius:0;min-height:100%}
   .hero-picture figcaption{left:25px;right:25px;bottom:14px}
-  .process-card{height:auto;min-height:0;padding:28px 24px 32px}
+  .process-card{height:auto;min-height:0;padding:24px}
 }
 
 /* Mobile: page content reads centered. */

@@ -38,7 +38,7 @@ const revealItems = [...document.querySelectorAll(
   'main .button, main .text-link, main .hero-secondary, main .hand-note, ' +
   'main .process-num, main .values-ribbon > span, main .care-art > .eyebrow, ' +
   '.footer h3, .footer p, .footer a'
-)];
+)].filter(element => !element.closest('.process-card'));
 document.querySelectorAll('.reveal').forEach(element => element.classList.remove('reveal', 'waiting'));
 let revealObserver;
 function updateRevealDirections() {
