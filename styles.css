@@ -169,3 +169,33 @@
   #contact-links{justify-content:center}
   .process-num{margin-left:auto;margin-right:auto}
 }
+
+/* Hero entrance: the photo shows first, then the green veil sweeps in from the left with the copy. */
+.hero-copy{background:none}
+.hero-copy::before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(to right,rgba(34,75,41,.97) 55%,transparent 100%)}
+@keyframes hero-veil{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes hero-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes hero-settle{from{transform:scale(1.06)}to{transform:none}}
+.has-js .hero-picture>img{animation:hero-settle 1.8s cubic-bezier(.22,.61,.36,1) both}
+.has-js .hero-copy::before{animation:hero-veil 1.1s cubic-bezier(.22,.61,.36,1) .35s both}
+.has-js .hero-copy>*{animation:hero-rise .8s cubic-bezier(.22,.61,.36,1) both}
+.has-js .hero-copy>:nth-child(1){animation-delay:.85s}
+.has-js .hero-copy>:nth-child(2){animation-delay:1s}
+.has-js .hero-copy>:nth-child(3){animation-delay:1.15s}
+.has-js .hero-copy>:nth-child(4){animation-delay:1.3s}
+.has-js .hero-copy>:nth-child(5){animation-delay:1.45s}
+@media(max-width:760px){
+  .hero-copy::before{background:linear-gradient(to bottom,rgba(34,75,41,.95) 50%,rgba(34,75,41,.7) 78%,rgba(34,75,41,.15) 100%)}
+}
+
+/* Desktop process cards: compact steps instead of full-screen panels. */
+@media(min-width:761px){
+  .process-stack{max-width:1100px;margin-left:auto;margin-right:auto}
+  .process-card{padding:clamp(28px,3vw,48px)}
+  .process-card h3{font-size:clamp(2.2rem,5vw,4.25rem);margin-bottom:22px}
+  .process-num{font-size:clamp(2rem,3vw,3rem)}
+  .process-card p{font-size:clamp(1.1rem,1.6vw,1.4rem)}
+}
+@media(min-width:761px) and (min-height:651px){
+  .process-card{min-height:clamp(300px,42svh,440px)}
+}
