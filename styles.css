@@ -238,6 +238,8 @@ body{font-family:var(--serif)}
 .maple h3{font-size:clamp(1.3rem,1.8vw,1.7rem);letter-spacing:-.02em;margin-top:18px}
 .maple-price{font-family:var(--display);font-size:clamp(1.9rem,2.6vw,2.5rem);line-height:1.1;margin-top:4px;font-variant-numeric:tabular-nums}
 .maples-note{margin-top:28px;font-size:.88rem}
+.maples-cta{margin-top:22px}
+.field-table-lead{font-size:clamp(1.15rem,1.6vw,1.4rem);line-height:1.5;max-width:46ch;margin-top:32px}
 @media(max-width:760px){
   .maples-title{text-align:center}
   .maples-list{grid-template-columns:1fr;gap:20px}
@@ -246,4 +248,7 @@ body{font-family:var(--serif)}
   .maple h3{margin-top:0;align-self:end;font-size:1.3rem}
   .maple-price{align-self:start;font-size:2rem}
   .maples-note{text-align:center}
+  .values-ribbon{display:flex;justify-content:center;flex-wrap:wrap;gap:6px clamp(16px,6vw,32px);font-size:1.45rem}
+  .maples-cta{display:flex;width:fit-content;margin-inline:auto}
+  .field-table-lead{text-align:center;margin-inline:auto;margin-top:24px}
 }
