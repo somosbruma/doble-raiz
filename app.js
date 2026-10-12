@@ -38,7 +38,7 @@ const revealItems = [...document.querySelectorAll(
   'main .button, main .text-link, main .hero-secondary, main .hand-note, ' +
   'main .process-num, main .values-ribbon > span, main .care-art > .eyebrow, ' +
   '.footer h3, .footer p, .footer a'
-)].filter(element => !element.closest('.day, .hero'));
+)].filter(element => !element.closest('.day-steps, .maples-list, .hero'));
 document.querySelectorAll('.reveal').forEach(element => element.classList.remove('reveal', 'waiting'));
 let revealObserver;
 function updateRevealDirections() {
@@ -126,107 +126,20 @@ function updateHeaderBg() { header.classList.toggle('is-scrolled', window.scroll
 window.addEventListener('scroll', updateHeaderBg, { passive: true });
 updateHeaderBg();
 
-// Process: one day in the field. Scroll drives the sky, sun, moon and hen; the list stays readable without it.
-const day = document.querySelector('.day');
-if (day) {
-  const track = day.querySelector('.day-track');
-  const steps = [...day.querySelectorAll('.day-step')];
-  const hen = day.querySelector('.day-hen');
-  const dotsWrap = day.querySelector('.day-dots');
-  const skies = ['#f3d9a4', '#d4eadf', '#c1e6ee', '#f0d98a', '#193a59', '#f5f0e3'];
-  const henStops = [30, 42, 54, 47, 33, 24];
-  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-  const mix = (a, b, t) => a + (b - a) * t;
-  const rgb = hex => [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16));
-  const lerpStops = (stops, f, toColor) => {
-    const x = clamp(f - .5, 0, stops.length - 1);
-    const i = Math.min(stops.length - 2, Math.floor(x));
-    const t = x - i;
-    if (!toColor) return mix(stops[i], stops[i + 1], t);
-    const a = rgb(stops[i]), b = rgb(stops[i + 1]);
-    return 'rgb(' + a.map((v, k) => Math.round(mix(v, b[k], t))).join(',') + ')';
-  };
-  const orbit = angle => [50 + 46 * Math.cos(angle), 100 - 92 * Math.sin(angle)];
-  let live = false;
-  let current = -1;
-  let dayFrame = 0;
-
-  const dots = steps.map((step, index) => {
-    const dot = document.createElement('button');
-    dot.type = 'button';
-    dot.className = 'day-dot';
-    dot.setAttribute('aria-label', 'Paso ' + (index + 1) + ': ' + step.querySelector('h3').textContent);
-    dot.addEventListener('click', () => {
-      const range = track.offsetHeight - window.innerHeight;
-      const top = track.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: top + range * (index + .5) / steps.length, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
-    });
-    dotsWrap.append(dot);
-    return dot;
-  });
-
-  function setStep(index) {
-    if (index === current) return;
-    current = index;
-    day.dataset.step = index;
-    steps.forEach((step, i) => step.classList.toggle('is-active', i === index));
-    dots.forEach((dot, i) => {
-      if (i === index) dot.setAttribute('aria-current', 'step');
-      else dot.removeAttribute('aria-current');
-    });
-    hen.classList.remove('is-pecking');
-    void hen.offsetWidth;
-    hen.classList.add('is-pecking');
-  }
-
-  function updateDay() {
-    dayFrame = 0;
-    if (!live) return;
-    const rect = track.getBoundingClientRect();
-    const progress = clamp(-rect.top / Math.max(1, rect.height - window.innerHeight), 0, 1);
-    const f = progress * steps.length;
-    const night = clamp(1 - Math.abs(f - 4.5) / .75, 0, 1);
-    const sunDay = clamp(f / 4.3, 0, 1);
-    const sunNext = clamp(f - 5, 0, 1) * .3;
-    const sunAngle = f < 5 ? Math.PI * (1 - sunDay) : Math.PI * (1 - sunNext);
-    const sunOpacity = f < 5 ? clamp((4.3 - f) / .3, 0, 1) : clamp((f - 5) / .3, 0, 1);
-    const moonAngle = Math.PI * (1 - clamp((f - 3.8) / 1.4, 0, 1)) * .8 + Math.PI * .1;
-    const [sunX, sunY] = orbit(sunAngle);
-    const [moonX, moonY] = orbit(moonAngle);
-    const style = day.style;
-    style.setProperty('--sky', lerpStops(skies, f, true));
-    style.setProperty('--night', night.toFixed(3));
-    style.setProperty('--sun-x', sunX.toFixed(2) + '%');
-    style.setProperty('--sun-y', sunY.toFixed(2) + '%');
-    style.setProperty('--sun-o', sunOpacity.toFixed(3));
-    style.setProperty('--moon-x', moonX.toFixed(2) + '%');
-    style.setProperty('--moon-y', moonY.toFixed(2) + '%');
-    style.setProperty('--moon-o', night.toFixed(3));
-    style.setProperty('--hen-x', lerpStops(henStops, f).toFixed(2) + '%');
-    day.classList.toggle('is-night', night > .45);
-    setStep(Math.min(steps.length - 1, Math.floor(f)));
-  }
-  function queueDay() {
-    if (!dayFrame) dayFrame = requestAnimationFrame(updateDay);
-  }
-  function configureDay() {
-    live = !reducedMotion.matches && window.innerHeight >= 560;
-    day.classList.toggle('is-live', live);
-    dotsWrap.hidden = !live;
-    if (!live) {
-      day.removeAttribute('style');
-      day.removeAttribute('data-step');
-      day.classList.remove('is-night');
-      steps.forEach(step => step.classList.remove('is-active'));
-      current = -1;
-      return;
+// Process: each arched window plays its moment once when it comes into view.
+const daySteps = [...document.querySelectorAll('.day-step')];
+if (daySteps.length && !reducedMotion.matches && 'IntersectionObserver' in window) {
+  const dayObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.replace('is-waiting', 'is-in');
+      dayObserver.unobserve(entry.target);
     }
-    queueDay();
-  }
-  window.addEventListener('scroll', queueDay, { passive: true });
-  window.addEventListener('resize', configureDay);
-  reducedMotion.addEventListener('change', configureDay);
-  configureDay();
+  }, { threshold: .45 });
+  daySteps.forEach(step => {
+    step.classList.add('is-waiting');
+    dayObserver.observe(step);
+  });
 }
 
 const contactLinks = document.querySelector('#contact-links');

@@ -71,45 +71,35 @@
         <details class="fact-detail"><summary>¿Qué significa “libres de jaula”? <span aria-hidden="true">+</span></summary><p>Describe un sistema de alojamiento sin jaulas. No implica, por sí solo, acceso al exterior. Las condiciones específicas de Doble Raíz están pendientes de validación para esta versión.</p></details>
       </div>
     </section>
-    <section class="day" id="proceso" aria-labelledby="day-title">
+    <section class="day section-wrap" id="proceso" aria-labelledby="day-title">
       <!-- [CONFIRMAR CON LA CLIENTA: nombres de los hermanos, historia, ubicación y etapas reales de producción. Incorporar fotografías propias con autoría y contexto.] -->
-      <div class="day-wave day-wave--top" aria-hidden="true"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" focusable="false"><path d="M0 0 H1440 V35 C1160 115 720 0 520 50 S180 95 0 45 Z"/></svg></div>
-      <div class="day-track">
-        <div class="day-stage">
-          <div class="day-scene" aria-hidden="true">
-            <div class="day-stars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <div class="day-orbit">
-              <svg class="day-arc" viewBox="0 0 1000 500" preserveAspectRatio="none" focusable="false"><path d="M40 500 A460 460 0 0 1 960 500"/></svg>
-              <div class="day-sun"></div>
-              <div class="day-moon"></div>
-            </div>
-            <svg class="day-hills" viewBox="0 0 1440 400" preserveAspectRatio="none" focusable="false">
-              <path class="day-hill-back" d="M0 120 C220 40 420 60 640 110 S1100 30 1440 90 V400 H0 Z"/>
-              <path class="day-hill-front" d="M0 220 C260 150 520 170 760 215 S1180 170 1440 205 V400 H0 Z"/>
-            </svg>
-            <div class="day-cloth"></div>
-            <div class="day-actors">
-              <img class="day-hen" src="assets/gallina-amarilla.webp" width="900" height="870" alt="" loading="lazy">
-              <svg class="day-egg" viewBox="0 0 60 76" focusable="false"><path d="M30 2 C46 2 58 30 58 47 C58 64 46 74 30 74 C14 74 2 64 2 47 C2 30 14 2 30 2 Z"/></svg>
-              <svg class="day-carton" viewBox="0 0 240 120" focusable="false"><path d="M8 40 H232 L220 112 H20 Z"/><path class="day-carton-cups" d="M14 40 C14 14 52 14 52 40 C52 14 90 14 90 40 C90 14 128 14 128 40 C128 14 166 14 166 40 C166 14 204 14 204 40 C204 14 226 18 226 40"/></svg>
-            </div>
-            <div class="day-night"></div>
-          </div>
-          <div class="day-copy">
-            <h2 id="day-title">Un día<br>en el campo.</h2>
-            <ol class="day-steps">
-              <li class="day-step" data-moment="Amanecer"><h3>Reciben nutrientes</h3><p>Cada mañana las gallinas acceden a alimento fresco: granos, hierbas y lo que encuentran en el campo.</p></li>
-              <li class="day-step" data-moment="Media mañana"><h3>Exploran el campo</h3><p>Salen al exterior, picotean, se mueven y viven como gallinas. El espacio es parte de nuestra propuesta.</p></li>
-              <li class="day-step" data-moment="Mediodía"><h3>Alimento disponible</h3><p>Durante todo el día tienen acceso libre a agua limpia, forraje y espacio para buscar su propio alimento.</p></li>
-              <li class="day-step" data-moment="Tarde"><h3>Ponen con calma</h3><p>El bienestar de cada gallina se refleja en sus huevos. Sin estrés, sin apuro, con un entorno que respetan.</p></li>
-              <li class="day-step" data-moment="Noche"><h3>Descansan de noche</h3><p>Con luz natural, cada gallina respeta su ciclo de sueño real. Sin iluminación artificial que altere su ritmo.</p></li>
-              <li class="day-step" data-moment="A la mañana siguiente"><h3>Del campo a tu mesa</h3><p>Recolección a mano, trazabilidad completa. Sabés exactamente de dónde viene lo que elegís comer.</p></li>
-            </ol>
-            <div class="day-dots" hidden></div>
-          </div>
-        </div>
-      </div>
-      <div class="day-wave day-wave--bottom" aria-hidden="true"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" focusable="false"><path d="M0 45 C240 115 410 0 720 42 S1160 115 1440 35 V100 H0 Z"/></svg></div>
+      <h2 id="day-title">Un día<br><em>en el campo.</em></h2>
+      <ol class="day-steps">
+          <li class="day-step day-step--dawn">
+            <div class="day-scene" aria-hidden="true"><div class="day-sun"></div><svg class="day-hill" viewBox="0 0 400 160" preserveAspectRatio="none" focusable="false"><path d="M0 50 C90 10 170 20 250 45 S360 30 400 40 V160 H0 Z"/></svg><img class="day-hen" src="assets/gallina-amarilla.webp" width="900" height="870" alt="" loading="lazy"></div>
+            <div class="day-text"><h3>Reciben nutrientes</h3><p>Cada mañana las gallinas acceden a alimento fresco: granos, hierbas y lo que encuentran en el campo.</p></div>
+          </li>
+          <li class="day-step day-step--morning">
+            <div class="day-scene" aria-hidden="true"><div class="day-sun"></div><svg class="day-hill" viewBox="0 0 400 160" preserveAspectRatio="none" focusable="false"><path d="M0 50 C90 10 170 20 250 45 S360 30 400 40 V160 H0 Z"/></svg><img class="day-hen" src="assets/gallina-amarilla.webp" width="900" height="870" alt="" loading="lazy"></div>
+            <div class="day-text"><h3>Exploran el campo</h3><p>Salen al exterior, picotean, se mueven y viven como gallinas. El espacio es parte de nuestra propuesta.</p></div>
+          </li>
+          <li class="day-step day-step--noon">
+            <div class="day-scene" aria-hidden="true"><div class="day-sun"></div><svg class="day-hill" viewBox="0 0 400 160" preserveAspectRatio="none" focusable="false"><path d="M0 50 C90 10 170 20 250 45 S360 30 400 40 V160 H0 Z"/></svg><img class="day-hen" src="assets/gallina-amarilla.webp" width="900" height="870" alt="" loading="lazy"></div>
+            <div class="day-text"><h3>Alimento disponible</h3><p>Durante todo el día tienen acceso libre a agua limpia, forraje y espacio para buscar su propio alimento.</p></div>
+          </li>
+          <li class="day-step day-step--afternoon">
+            <div class="day-scene" aria-hidden="true"><div class="day-sun"></div><svg class="day-hill" viewBox="0 0 400 160" preserveAspectRatio="none" focusable="false"><path d="M0 50 C90 10 170 20 250 45 S360 30 400 40 V160 H0 Z"/></svg><img class="day-hen" src="assets/gallina-amarilla.webp" width="900" height="870" alt="" loading="lazy"><svg class="day-egg" viewBox="0 0 60 76" focusable="false"><path d="M30 2 C46 2 58 30 58 47 C58 64 46 74 30 74 C14 74 2 64 2 47 C2 30 14 2 30 2 Z"/></svg></div>
+            <div class="day-text"><h3>Ponen con calma</h3><p>El bienestar de cada gallina se refleja en sus huevos. Sin estrés, sin apuro, con un entorno que respetan.</p></div>
+          </li>
+          <li class="day-step day-step--night">
+            <div class="day-scene" aria-hidden="true"><div class="day-moon"></div><div class="day-stars"><i></i><i></i><i></i><i></i><i></i></div><svg class="day-hill" viewBox="0 0 400 160" preserveAspectRatio="none" focusable="false"><path d="M0 50 C90 10 170 20 250 45 S360 30 400 40 V160 H0 Z"/></svg><img class="day-hen" src="assets/gallina-amarilla.webp" width="900" height="870" alt="" loading="lazy"><svg class="day-egg" viewBox="0 0 60 76" focusable="false"><path d="M30 2 C46 2 58 30 58 47 C58 64 46 74 30 74 C14 74 2 64 2 47 C2 30 14 2 30 2 Z"/></svg></div>
+            <div class="day-text"><h3>Descansan de noche</h3><p>Con luz natural, cada gallina respeta su ciclo de sueño real. Sin iluminación artificial que altere su ritmo.</p></div>
+          </li>
+          <li class="day-step day-step--table">
+            <div class="day-scene" aria-hidden="true"><div class="day-sun"></div><div class="day-cloth"></div><svg class="day-carton" viewBox="0 0 240 120" focusable="false"><path d="M8 40 H232 L220 112 H20 Z"/><path class="day-carton-cups" d="M14 40 C14 14 52 14 52 40 C52 14 90 14 90 40 C90 14 128 14 128 40 C128 14 166 14 166 40 C166 14 204 14 204 40 C204 14 226 18 226 40"/></svg><svg class="day-egg" viewBox="0 0 60 76" focusable="false"><path d="M30 2 C46 2 58 30 58 47 C58 64 46 74 30 74 C14 74 2 64 2 47 C2 30 14 2 30 2 Z"/></svg></div>
+            <div class="day-text"><h3>Del campo a tu mesa</h3><p>Recolección a mano, trazabilidad completa. Sabés exactamente de dónde viene lo que elegís comer.</p></div>
+          </li>
+      </ol>
     </section>
     <div class="values-ribbon" aria-label="Valores de Doble Raíz"><span>Bienestar</span><span aria-hidden="true">✳</span><span>Calidad</span><span aria-hidden="true">✳</span><span>Conciencia</span><span aria-hidden="true">✳</span><span class="ribbon-last">Doble Raíz</span></div>
     <div class="section-wave care-soil" aria-hidden="true"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" focusable="false"><path d="M0 45 C240 115 410 0 720 42 S1160 115 1440 35 V100 H0 Z"/></svg></div>
@@ -132,6 +122,28 @@
           <a class="text-link" href="#encontrarnos">Dónde encontrarnos</a>
         </div>
       </div>
+      <div class="maples" id="maples" aria-labelledby="maples-title">
+        <h2 id="maples-title" class="maples-title">Elegí tu maple.</h2>
+        <ul class="maples-list">
+          <li class="maple">
+            <img src="assets/maple-6.webp" width="900" height="717" alt="Maple de 6 huevos de campo Doble Raíz, faja verde, sobre fondo de cemento." loading="lazy">
+            <h3>Maple de 6</h3>
+            <p class="maple-price"><span class="visually-hidden">Precio estimado: </span>$4.000</p>
+          </li>
+          <li class="maple">
+            <img src="assets/maple-12.webp" width="900" height="717" alt="Maple de 12 huevos de campo Doble Raíz, faja azul, sobre fondo de cemento." loading="lazy">
+            <h3>Maple de 12</h3>
+            <p class="maple-price"><span class="visually-hidden">Precio estimado: </span>$8.000</p>
+          </li>
+          <li class="maple">
+            <img src="assets/maple-30.webp" width="900" height="717" alt="Maple de 30 huevos de campo Doble Raíz, faja verde, sobre fondo de cemento." loading="lazy">
+            <h3>Maple de 30</h3>
+            <p class="maple-price"><span class="visually-hidden">Precio estimado: </span>$14.000</p>
+          </li>
+        </ul>
+        <p class="maples-note">Precios de referencia. Pueden variar según el punto de venta.</p>
+      </div>
+      <!-- [CONFIRMAR CON LA CLIENTA: precios vigentes de cada presentación.] -->
       <!-- [CONFIRMAR CON LA CLIENTA: prácticas de manejo del suelo y evidencia, presentaciones y características del producto. La imagen es conceptual y no acredita prácticas ni envases definitivos.] -->
     </section>
     <div class="section-wave product-find" aria-hidden="true"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" focusable="false"><path d="M0 45 C240 115 410 0 720 42 S1160 115 1440 35 V100 H0 Z"/></svg><div class="section-seal" data-scroll-art><span>DOBLE RAÍZ</span><img src="assets/gallina-verde.webp" width="900" height="875" alt=""><span>CERCA DE TU MESA</span></div></div>

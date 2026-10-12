@@ -168,83 +168,82 @@
 body{font-family:var(--serif)}
 .button,.hero-secondary,.whatsapp-float,summary{font-family:var(--sans)}
 
-/* Process: one day in the field. Static by default; .is-live adds the scroll-driven scene. */
-.day{--sky:#c1e6ee;--night:0;--sun-x:50%;--sun-y:8%;--sun-o:1;--moon-x:70%;--moon-y:20%;--moon-o:0;--hen-x:40%;--day-ink:var(--green);position:relative;background:var(--light);color:var(--day-ink)}
-.day-wave{position:relative;z-index:3;height:80px;line-height:0;color:var(--light);pointer-events:none}
-.day-wave svg{width:100%;height:100%;display:block;fill:currentColor}
-.day-wave--top{margin-bottom:-80px}
-.day-wave--bottom{margin-top:-80px}
-.day-stage{position:relative}
-.day-scene{position:relative;height:clamp(300px,46vh,460px);overflow:hidden;background:var(--sky);transition:background-color .2s linear}
-.day-stars{position:absolute;inset:0 0 40% 0;opacity:var(--night)}
-.day-stars i{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--cream)}
-.day-stars i:nth-child(1){left:12%;top:22%}.day-stars i:nth-child(2){left:24%;top:12%;width:3px;height:3px}.day-stars i:nth-child(3){left:38%;top:30%}.day-stars i:nth-child(4){left:52%;top:16%;width:3px;height:3px}.day-stars i:nth-child(5){left:66%;top:34%}.day-stars i:nth-child(6){left:78%;top:14%}.day-stars i:nth-child(7){left:90%;top:26%;width:3px;height:3px}
-.day-orbit{position:absolute;left:6%;width:52%;bottom:30%;height:54%;z-index:3}
-.day-arc{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:var(--day-ink);stroke-width:2;stroke-dasharray:2 12;stroke-linecap:round;opacity:.35;vector-effect:non-scaling-stroke;overflow:visible}
-.day-sun,.day-moon{position:absolute;left:var(--sun-x);top:var(--sun-y);width:clamp(46px,7vmin,78px);aspect-ratio:1;border-radius:50%;translate:-50% -50%}
-.day-sun{background:var(--yellow);opacity:var(--sun-o);outline:2px dashed #224b2966;outline-offset:9px}
-.day-moon{left:var(--moon-x);top:var(--moon-y);opacity:var(--moon-o);box-shadow:inset 14px -8px 0 0 var(--cream)}
-.day-hills{position:absolute;left:0;bottom:0;width:100%;height:46%;z-index:1}
-.day-hill-back{fill:var(--light)}
-.day-hill-front{fill:#6f9e5e}
-.day-cloth{position:absolute;left:-2%;right:-2%;bottom:-2%;height:26%;z-index:4;background:url('assets/textura-cuadros.webp') center/300px auto;border-top:6px solid var(--paper);transform:translateY(110%);transition:transform .8s cubic-bezier(.16,1,.3,1)}
-.day-actors{position:absolute;left:0;right:0;bottom:12%;height:34%;z-index:5}
-.day-hen{position:absolute;left:var(--hen-x);bottom:0;height:100%;width:auto;max-width:none;translate:-50% 0;transform-origin:50% 100%;transition:transform .6s cubic-bezier(.16,1,.3,1),opacity .4s}
-.day-hen.is-pecking{animation:day-peck .7s cubic-bezier(.3,.7,.2,1)}
-@keyframes day-peck{0%,100%{rotate:0deg}35%{rotate:9deg}60%{rotate:-3deg}}
-.day-egg{position:absolute;left:calc(var(--hen-x) + clamp(46px,8vw,120px));bottom:2%;width:clamp(24px,3.2vmin,38px);fill:var(--paper);stroke:var(--green);stroke-width:3;opacity:0;transform:scale(.4);transform-origin:50% 100%;transition:opacity .35s,transform .5s cubic-bezier(.34,1.4,.64,1),left .9s cubic-bezier(.16,1,.3,1),bottom .9s cubic-bezier(.16,1,.3,1)}
-.day-carton{position:absolute;right:12%;bottom:-6%;width:clamp(120px,16vw,220px);fill:#d8c3a0;stroke:var(--green);stroke-width:3;stroke-linejoin:round;opacity:0;transform:translateY(120%);transition:transform .8s cubic-bezier(.16,1,.3,1),opacity .3s}
+/* Process: one day in the field, told as six arched windows that read top to bottom. */
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.day{background:var(--light);color:var(--green);padding-top:40px;padding-bottom:90px}
+.day>h2{margin-bottom:clamp(40px,6vw,72px)}
+.day-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(48px,6vw,80px) clamp(24px,4vw,56px);counter-reset:day}
+.day-step{counter-increment:day;display:flex;flex-direction:column;gap:22px}
+.day-step--dawn{--sky:#f3d9a4;--sx:20%;--sy:58%;--hx:64%}
+.day-step--morning{--sky:#d4eadf;--sx:28%;--sy:30%;--hx:42%}
+.day-step--noon{--sky:#c1e6ee;--sx:50%;--sy:18%;--hx:58%}
+.day-step--afternoon{--sky:#f0d98a;--sx:76%;--sy:34%;--hx:40%}
+.day-step--night{--sky:#193a59;--hx:38%}
+.day-step--table{--sky:#f5f0e3;--sx:80%;--sy:26%}
+.day-scene{position:relative;aspect-ratio:4/3.4;overflow:hidden;background:var(--sky);border-radius:999px 999px 26px 26px;isolation:isolate}
+.day-sun,.day-moon{position:absolute;left:var(--sx,50%);top:var(--sy,30%);width:clamp(40px,4.6vw,62px);aspect-ratio:1;border-radius:50%;translate:-50% -50%}
+.day-sun{background:var(--yellow);outline:2px dashed #224b2966;outline-offset:8px}
+.day-step--afternoon .day-sun{background:#f6e7a6}
+.day-moon{left:66%;top:28%;box-shadow:inset 13px -7px 0 0 var(--cream)}
+.day-stars i{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--cream)}
+.day-stars i:nth-child(1){left:22%;top:30%}.day-stars i:nth-child(2){left:38%;top:18%;width:3px;height:3px}.day-stars i:nth-child(3){left:48%;top:40%}.day-stars i:nth-child(4){left:82%;top:46%;width:3px;height:3px}.day-stars i:nth-child(5){left:30%;top:52%}
+.day-hill{position:absolute;left:-2%;bottom:0;width:104%;height:36%;fill:#6f9e5e}
+.day-step--night .day-hill{fill:#2f4f3c}
+.day-hen{position:absolute;left:var(--hx,30%);bottom:13%;height:42%;width:auto;max-width:none;translate:-50% 0;transform-origin:50% 100%}
+.day-step--noon .day-hen{transform:scaleX(-1)}
+.day-step--night .day-hen{transform:scaleY(.9) rotate(-4deg);filter:brightness(.62) saturate(.8)}
+.day-egg{position:absolute;left:calc(var(--hx,30%) + 22%);bottom:13%;width:clamp(20px,2.3vw,30px);fill:var(--paper);stroke:var(--green);stroke-width:3}
+.day-step--night .day-egg{filter:brightness(.7)}
+.day-cloth{position:absolute;left:0;right:0;bottom:0;height:38%;background:url('assets/textura-cuadros.webp') center/240px auto;border-top:5px solid var(--paper)}
+.day-carton{position:absolute;left:50%;bottom:17%;width:58%;translate:-50% 0;fill:#d8c3a0;stroke:var(--green);stroke-width:3;stroke-linejoin:round}
 .day-carton-cups{fill:none}
-.day-night{position:absolute;inset:0;z-index:6;background:#193a59;mix-blend-mode:multiply;opacity:calc(var(--night) * .55);pointer-events:none}
-.day-copy{padding:56px max(6vw,24px) 120px;color:var(--green)}
-.day-copy h2{margin-bottom:40px}
-.day-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 5vw;counter-reset:day}
-.day-step{counter-increment:day}
-.day-step h3{font-size:clamp(1.5rem,2.2vw,2rem);letter-spacing:-.02em;margin-bottom:10px;text-wrap:balance}
-.day-step h3::before{content:counter(day) '. ';font-family:var(--display);letter-spacing:0}
-.day-step p{font-size:1.05rem;line-height:1.55;max-width:38ch}
-/* Static scene shows the egg already laid. */
-.day:not(.is-live) .day-egg{opacity:1;transform:none}
+.day-step--table .day-egg{left:50%;bottom:calc(17% + 21%);translate:-50% 0}
+.day-text h3{font-size:clamp(1.5rem,2vw,1.9rem);letter-spacing:-.02em;margin-bottom:8px;text-wrap:balance}
+.day-text h3::before{content:counter(day) '. ';font-family:var(--display);letter-spacing:0}
+.day-text p{font-size:1.02rem;line-height:1.55;max-width:36ch}
 
-/* Live: a pinned stage tells the day as you scroll. */
-.day.is-live .day-track{height:calc(100svh + 6 * 62svh)}
-.day.is-live .day-stage{position:sticky;top:0;height:100svh;overflow:hidden}
-.day.is-live .day-scene{position:absolute;inset:0;height:auto}
-.day.is-live .day-copy{position:absolute;z-index:7;top:0;right:0;width:min(470px,38vw);padding:clamp(120px,17vh,170px) max(5vw,24px) 0 0;color:var(--day-ink);transition:color .5s}
-.day.is-live.is-night{--day-ink:var(--cream)}
-.day.is-live .day-copy h2{font-size:clamp(2.4rem,3.8vw,4rem);margin-bottom:clamp(24px,4vh,44px)}
-.day.is-live .day-steps{display:grid;grid-template-columns:1fr;gap:0}
-.day.is-live .day-step{grid-area:1/1;opacity:0;visibility:hidden;translate:0 14px;transition:opacity .45s cubic-bezier(.16,1,.3,1),translate .55s cubic-bezier(.16,1,.3,1),visibility 0s .45s}
-.day.is-live .day-step.is-active{opacity:1;visibility:visible;translate:0 0;transition-delay:0s}
-.day.is-live .day-step h3{font-size:clamp(1.7rem,2.6vw,2.6rem)}
-.day.is-live .day-step p{font-size:clamp(1.05rem,1.3vw,1.25rem);color:inherit}
-.day-dots{display:flex;gap:6px;margin-top:clamp(20px,3vh,32px)}
-.day-dots[hidden]{display:none}
-.day-dot{width:44px;height:44px;padding:0;border:0;background:none;color:inherit;cursor:pointer;display:grid;place-items:center}
-.day-dot::before{content:'';width:14px;height:18px;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;border:2px solid currentColor;transition:background .3s,transform .3s cubic-bezier(.16,1,.3,1)}
-.day-dot[aria-current]::before{background:currentColor;transform:scale(1.15)}
-.day-dot:hover::before{transform:scale(1.15)}
-.day[data-step="2"] .day-hen{transform:scaleX(-1)}
-.day[data-step="4"] .day-hen{transform:scaleY(.9) rotate(-4deg)}
-.day[data-step="3"] .day-egg,.day[data-step="4"] .day-egg{opacity:1;transform:none}
-.day[data-step="5"] .day-egg{opacity:1;transform:none;left:calc(88% - clamp(60px,8vw,110px));bottom:24%}
-.day[data-step="5"] .day-cloth,.day[data-step="5"] .day-carton{transform:none;opacity:1}
-.day[data-step="5"] .day-hen{opacity:.0}
+/* In-view motion: each window plays its moment once, from an already-visible default. */
+@keyframes day-sun-rise{from{translate:-50% 40%;opacity:.2}to{translate:-50% -50%;opacity:1}}
+@keyframes day-peck{0%,100%{rotate:0deg}30%{rotate:10deg}55%{rotate:-3deg}75%{rotate:6deg}}
+@keyframes day-pop{from{transform:scale(.2);opacity:0}70%{transform:scale(1.12)}to{transform:none;opacity:1}}
+@keyframes day-drop{from{bottom:70%;opacity:0}to{opacity:1}}
+@keyframes day-slide{from{transform:translateY(100%)}to{transform:none}}
+.day-step.is-waiting .day-sun,.day-step.is-waiting .day-moon,.day-step.is-waiting .day-egg{opacity:0}
+.day-step.is-in .day-sun,.day-step.is-in .day-moon{animation:day-sun-rise 1.1s cubic-bezier(.16,1,.3,1) both}
+.day-step.is-in .day-hen{animation:day-peck .8s cubic-bezier(.3,.7,.2,1) .45s both}
+.day-step.is-in .day-egg{transform-origin:50% 100%;animation:day-pop .6s cubic-bezier(.16,1,.3,1) .9s both}
+.day-step--table.is-in .day-egg{animation:day-drop .7s cubic-bezier(.3,.7,.2,1) .5s both}
+.day-step--table.is-in .day-cloth{animation:day-slide .8s cubic-bezier(.16,1,.3,1) both}
 
+@media(max-width:1000px){.day-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){
-  .day-wave{height:50px}.day-wave--top{margin-bottom:-50px}.day-wave--bottom{margin-top:-50px}
-  .day-copy{padding:40px 24px 80px;text-align:center}
+  .day{padding-top:30px;padding-bottom:60px}
+  .day>h2{text-align:center}
   .day-steps{grid-template-columns:1fr;gap:28px}
-  .day-step p{margin-inline:auto}
-  .day-orbit{left:6%;width:88%;bottom:34%;height:40%}
-  .day.is-live .day-copy{left:0;width:auto;padding:clamp(92px,13svh,120px) 24px 0}
-  .day.is-live .day-copy h2{font-size:clamp(2rem,9vw,2.6rem);margin-bottom:16px}
-  .day.is-live .day-step h3{font-size:1.5rem;margin-bottom:6px}
-  .day.is-live .day-step p{font-size:1rem;line-height:1.5}
-  .day.is-live .day-orbit{bottom:33%;height:20%}
-  .day-dots{justify-content:center;margin-top:8px}
-  .day-hills{height:36%}
-  .day-actors{bottom:9%;height:19%}
-  .day-carton{right:8%;width:130px}
-  .day[data-step="5"] .day-egg{left:calc(92% - 90px)}
+  .day-step{flex-direction:row;align-items:center;gap:18px;text-align:left}
+  .day-scene{flex:0 0 42%;aspect-ratio:4/4.4}
+  .day-text h3{font-size:1.3rem}
+  .day-text p{font-size:.95rem}
+  .day-sun,.day-moon{width:30px}
+  .day-sun{outline-offset:5px}
+  .day-moon{box-shadow:inset 8px -5px 0 0 var(--cream)}
+}
+
+/* Products: three sizes, photo and price, nothing else. */
+.maples{margin-top:clamp(70px,9vw,120px)}
+.maples-title{font-size:clamp(2.6rem,5vw,4.5rem);margin-bottom:clamp(32px,4vw,52px)}
+.maples-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px)}
+.maple img{width:100%;aspect-ratio:900/717;object-fit:cover;border-radius:22px;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.maple:hover img{transform:scale(1.02)}
+.maple h3{font-size:clamp(1.3rem,1.8vw,1.7rem);letter-spacing:-.02em;margin-top:18px}
+.maple-price{font-family:var(--display);font-size:clamp(1.9rem,2.6vw,2.5rem);line-height:1.1;margin-top:4px;font-variant-numeric:tabular-nums}
+.maples-note{margin-top:28px;font-size:.88rem}
+@media(max-width:760px){
+  .maples-title{text-align:center}
+  .maples-list{grid-template-columns:1fr;gap:20px}
+  .maple{display:grid;grid-template-columns:46% 1fr;align-items:center;column-gap:18px;text-align:left}
+  .maple img{grid-row:span 2;border-radius:16px}
+  .maple h3{margin-top:0;align-self:end;font-size:1.3rem}
+  .maple-price{align-self:start;font-size:2rem}
+  .maples-note{text-align:center}
 }
