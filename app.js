@@ -5,7 +5,6 @@ const SITE_CONFIG = {
   whatsapp: '5492212046310', // Código de país y número, solo dígitos.
   email: '',
   instagram: 'https://www.instagram.com/dobleraiz_/', // URL https://www.instagram.com/... oficial.
-  retailers: [] // { name: '...', address: '...', mapUrl: 'https://...' }
 };
 
 const menuButton = document.querySelector('.menu-toggle');
@@ -152,28 +151,8 @@ function addContact(label, href) {
 if (/^\d{8,15}$/.test(SITE_CONFIG.whatsapp)) {
   const url = 'https://wa.me/' + SITE_CONFIG.whatsapp;
   addContact('WhatsApp', url);
-  document.querySelector('#retail-contact').href = url + '?text=' + encodeURIComponent('Hola, quisiera saber dónde conseguir Doble Raíz.');
-  document.querySelector('#retail-contact').firstChild.textContent = 'Consultar por WhatsApp ';
   document.querySelector('#trade-contact').href = url + '?text=' + encodeURIComponent('Hola, me interesa comercializar Doble Raíz. Mi comercio está en: ');
 }
 if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(SITE_CONFIG.email)) addContact('Correo', 'mailto:' + SITE_CONFIG.email);
 if (/^https:\/\/(www\.)?instagram\.com\//.test(SITE_CONFIG.instagram)) addContact('Instagram', SITE_CONFIG.instagram);
 if (contactLinks.children.length) document.querySelector('#contact-status').textContent = 'Conversemos.';
-if (SITE_CONFIG.retailers.length) {
-  const list = document.querySelector('#retail-list');
-  list.hidden = false;
-  document.querySelector('#retail-status').textContent = 'Encontrá el comercio más cercano.';
-  for (const retailer of SITE_CONFIG.retailers) {
-    const item = document.createElement('li');
-    const name = document.createElement('strong');
-    name.textContent = retailer.name;
-    item.append(name, document.createElement('br'), document.createTextNode(retailer.address));
-    if (/^https:\/\//.test(retailer.mapUrl || '')) {
-      const map = document.createElement('a');
-      map.textContent = ' · Ver ubicación';
-      map.href = retailer.mapUrl;
-      item.append(map);
-    }
-    list.append(item);
-  }
-}

@@ -307,3 +307,12 @@ h2{font-size:clamp(2.3rem,min(4.2vw,7.4vh),4.25rem)}
 .button-cream-outline{background:transparent;color:var(--green);border-color:currentColor}
 .button-cream-outline:hover{background:var(--green);color:var(--cream)}
 .find-social{margin-top:28px}
+.maple-count{font-family:var(--display);font-style:normal;font-size:clamp(2rem,2.7vw,2.5rem);line-height:1;letter-spacing:.02em;color:#224b29c2}
+/* Find us: Instagram is the way in. */
+.find-instagram{display:inline-flex;align-items:center;gap:16px;margin-top:clamp(24px,4vh,40px);font:clamp(1.6rem,2.4vw,2.2rem)/1 var(--display);color:var(--green);letter-spacing:.02em}
+.find-instagram-icon{flex:none;width:clamp(52px,5vw,64px);height:auto;aspect-ratio:1;padding:12px;border-radius:50%;background:var(--light);fill:none;stroke:var(--green);stroke-width:1.8;outline:1px dashed #224b2980;outline-offset:5px;transition:transform .3s cubic-bezier(.16,1,.3,1),background .3s}
+.find-instagram-icon .dot{fill:var(--green);stroke:none}
+.find-instagram span:not(.visually-hidden){text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px;text-decoration-color:#224b2966;transition:text-decoration-color .2s}
+.find-instagram:hover .find-instagram-icon{transform:rotate(-8deg) scale(1.06);background:var(--yellow)}
+.find-instagram:hover span:not(.visually-hidden){text-decoration-color:currentColor}
+@media(max-width:760px){.find-instagram{display:flex;width:fit-content;margin-inline:auto}}
