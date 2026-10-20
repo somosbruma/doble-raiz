@@ -73,7 +73,7 @@
     </section>
     <section class="day section-wrap" id="proceso" aria-labelledby="day-title">
       <!-- [CONFIRMAR CON LA CLIENTA: nombres de los hermanos, historia, ubicación y etapas reales de producción. Incorporar fotografías propias con autoría y contexto.] -->
-      <h2 id="day-title">Un día<br><em>en el campo.</em></h2>
+      <h2 id="day-title">Un día <br><em>en el campo.</em></h2>
       <ol class="day-steps">
           <li class="day-step day-step--dawn">
             <div class="day-scene" aria-hidden="true"><div class="day-sun"></div><svg class="day-hill" viewBox="0 0 400 160" preserveAspectRatio="none" focusable="false"><path d="M0 50 C90 10 170 20 250 45 S360 30 400 40 V160 H0 Z"/></svg><img class="day-hen" src="assets/gallina-amarilla.webp" width="900" height="870" alt="" loading="lazy"></div>
@@ -117,22 +117,28 @@
         <ul class="maples-list">
           <li class="maple">
             <img src="assets/maple-6.webp" width="900" height="717" alt="Maple de 6 huevos de campo Doble Raíz, faja verde, sobre fondo de cemento." loading="lazy">
-            <h3>Maple de 6</h3>
-            <p class="maple-price"><span class="visually-hidden">Precio estimado: </span>$4.000</p>
+            <div class="maple-info">
+              <h3><span class="maple-kind">Maple</span> <span class="maple-count" aria-hidden="true">×6</span><span class="visually-hidden">de 6 huevos</span></h3>
+              <p class="maple-price"><span class="visually-hidden">Precio de referencia: </span><span class="maple-currency">$</span>6.000</p>
+            </div>
           </li>
           <li class="maple">
             <img src="assets/maple-12.webp" width="900" height="717" alt="Maple de 12 huevos de campo Doble Raíz, faja azul, sobre fondo de cemento." loading="lazy">
-            <h3>Maple de 12</h3>
-            <p class="maple-price"><span class="visually-hidden">Precio estimado: </span>$8.000</p>
+            <div class="maple-info">
+              <h3><span class="maple-kind">Maple</span> <span class="maple-count" aria-hidden="true">×12</span><span class="visually-hidden">de 12 huevos</span></h3>
+              <p class="maple-price"><span class="visually-hidden">Precio de referencia: </span><span class="maple-currency">$</span>8.000</p>
+            </div>
           </li>
           <li class="maple">
             <img src="assets/maple-30.webp" width="900" height="717" alt="Maple de 30 huevos de campo Doble Raíz, faja verde, sobre fondo de cemento." loading="lazy">
-            <h3>Maple de 30</h3>
-            <p class="maple-price"><span class="visually-hidden">Precio estimado: </span>$14.000</p>
+            <div class="maple-info">
+              <h3><span class="maple-kind">Maple</span> <span class="maple-count" aria-hidden="true">×30</span><span class="visually-hidden">de 30 huevos</span></h3>
+              <p class="maple-price"><span class="visually-hidden">Precio de referencia: </span><span class="maple-currency">$</span>10.000</p>
+            </div>
           </li>
         </ul>
         <p class="maples-note">Precios de referencia. Pueden variar según el punto de venta.</p>
-        <a class="button button-green maples-cta" href="https://wa.me/5492215748388?text=Hola%2C+quiero+pedir+un+maple+de+Doble+Ra%C3%ADz." target="_blank" rel="noopener noreferrer">Pedilo por WhatsApp <span aria-hidden="true">→</span><span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
+        <a class="button button-green maples-cta" href="https://wa.me/5492212046310?text=Hola%2C+quiero+pedir+un+maple+de+Doble+Ra%C3%ADz." target="_blank" rel="noopener noreferrer">Pedilo por WhatsApp <span aria-hidden="true">→</span><span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
       </div>
       <!-- [CONFIRMAR CON LA CLIENTA: precios vigentes de cada presentación.] -->
       <!-- [CONFIRMAR CON LA CLIENTA: prácticas de manejo del suelo y evidencia, presentaciones y características del producto. La imagen es conceptual y no acredita prácticas ni envases definitivos.] -->
@@ -143,6 +149,7 @@
       <h2 id="find-title" class="reveal">¿Dónde nos<br><em>encontramos?</em></h2><p>Buscá Doble Raíz en tu próxima compra.</p>
       <div class="contact-row"><div><h3>Puntos de venta</h3><p id="retail-status">Estamos preparando el listado de comercios y localidades.</p></div><a id="retail-contact" class="button button-green" href="#contacto">Ver canales de contacto</a></div>
       <ul id="retail-list" class="retail-list" hidden></ul>
+      <div class="contact-row find-social"><div><h3>Seguinos</h3><p>Novedades, puntos de venta y la vida en el campo.</p></div><a class="button button-cream-outline" href="https://www.instagram.com/dobleraiz_/" target="_blank" rel="noopener noreferrer">@dobleraiz_ <span class="visually-hidden">en Instagram (se abre en una pestaña nueva)</span></a></div>
       <!-- [CONFIRMAR CON LA CLIENTA: puntos de venta, direcciones, localidades, enlaces y vigencia. Cargar en SITE_CONFIG de app.js.] -->
     </section>
     <div class="section-wave find-trade" aria-hidden="true"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" focusable="false"><path d="M0 45 C240 115 410 0 720 42 S1160 115 1440 35 V100 H0 Z"/></svg></div>
@@ -159,8 +166,8 @@
   <footer class="footer section-wrap" id="contacto"><div class="footer-top"><a class="brand" href="#inicio" aria-label="Doble Raíz, volver al inicio"><img src="assets/logo-amarillo.webp" width="900" height="297" alt="Doble Raíz — Huevos de campo" loading="lazy"></a><p>El origen a la vista.</p></div><div class="footer-bottom"><p id="contact-status">Canales oficiales de contacto en preparación.</p><div id="contact-links"></div><a href="#inicio">Volver arriba ↑</a></div><p class="footer-note">Doble Raíz · Huevos de campo</p>
     <!-- [CONFIRMAR CON LA CLIENTA: WhatsApp con código de país, correo e Instagram oficiales. No hay enlaces de contacto ficticios.] -->
   </footer>
-  <a class="whatsapp-float" href="https://wa.me/5492215748388?text=Hola%2C+quiero+m%C3%A1s+info+sobre+Doble+Ra%C3%ADz." target="_blank" rel="noopener noreferrer" aria-label="Quiero más info: abrir WhatsApp de Doble Raíz (nueva pestaña)">
-    <span>Quiero más info</span><img src="assets/whatsapp.svg" width="30" height="30" alt="">
+  <a class="whatsapp-float" href="https://wa.me/5492212046310?text=Hola%2C+quiero+m%C3%A1s+info+sobre+Doble+Ra%C3%ADz." target="_blank" rel="noopener noreferrer" aria-label="Hablemos: abrir WhatsApp de Doble Raíz (nueva pestaña)">
+    <span>Hablemos</span><img src="assets/whatsapp.svg" width="30" height="30" alt="">
   </a>
 </body>
 </html>

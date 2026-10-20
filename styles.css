@@ -252,3 +252,58 @@ body{font-family:var(--serif)}
   .maples-cta{display:flex;width:fit-content;margin-inline:auto}
   .field-table-lead{text-align:center;margin-inline:auto;margin-top:24px}
 }
+
+/* Fit each chapter to the screen: compact header, type scaled to viewport height as well as width. */
+:root{--header-h:72px}
+html{scroll-padding-top:calc(var(--header-h) + 8px)}
+h2{font-size:clamp(2.3rem,min(4.2vw,7.4vh),4.25rem)}
+.hero h1{font-size:clamp(3rem,min(5.2vw,9.5vh),5.5rem)}
+.section-wrap{padding-top:clamp(48px,min(6vw,9vh),88px);padding-bottom:clamp(48px,min(6vw,9vh),88px)}
+@media(min-width:761px){
+  .site-header{padding-top:12px;padding-bottom:12px}
+  .site-header:not(.is-scrolled){padding-bottom:30px}
+  .brand img{height:48px}
+  .site-header>.brand{width:clamp(120px,11vw,150px)}
+  .nav-split{font-size:clamp(1rem,1.45vw,1.4rem)}
+  .hero-copy{padding-top:clamp(110px,16vh,150px);padding-bottom:56px}
+  .care-art{min-height:0;height:min(600px,calc(100svh - var(--header-h) - 64px));padding:clamp(32px,5vh,56px) 3vw;gap:clamp(12px,2vh,24px);justify-content:center}
+  .care-art .hen{height:min(340px,38svh);width:auto;max-width:90%}
+  .care-copy{padding-top:clamp(40px,6vh,64px);padding-bottom:clamp(40px,6vh,64px)}
+  .care-copy h2{margin:clamp(14px,2.4vh,24px) 0}
+  .origin-care{height:150px}
+  .founders-seal{width:clamp(190px,17vw,240px)}
+  .day{padding-top:clamp(28px,4vh,44px)}
+  .day>h2 br{display:none}
+  .day>h2{margin-bottom:clamp(24px,4vh,44px)}
+  .day-steps{row-gap:clamp(36px,6vh,64px)}
+  .day-scene{aspect-ratio:4/2.9}
+  .day-step{gap:16px}
+  .field-table-heading h2{font-size:clamp(2.6rem,min(5.5vw,9vh),5.5rem)}
+  .field-table-image img{aspect-ratio:2.4}
+}
+@media(max-width:760px){
+  :root{--header-h:64px}
+  .site-header{padding-top:8px;padding-bottom:8px}
+  .brand{width:128px}
+  .brand img{height:46px}
+  .care-art{min-height:0}
+  .care-art .hen{height:min(230px,30svh);width:auto}
+}
+
+/* Maples: the size reads light, the price leads. */
+.maple-info{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid #224b2940}
+.maple-info h3{margin:0;font-size:1rem;letter-spacing:0;display:flex;align-items:baseline;gap:6px;color:#224b29b8}
+.maple-kind{font-family:var(--sans);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.maple-count{font-family:var(--serif);font-size:clamp(1.4rem,1.9vw,1.75rem);font-style:italic;letter-spacing:-.01em}
+.maple-price{margin:0;font-family:var(--serif);font-size:clamp(2.1rem,3.2vw,3rem);line-height:1;letter-spacing:-.03em;color:var(--green);font-variant-numeric:lining-nums tabular-nums}
+.maple-currency{font-size:.5em;vertical-align:.62em;margin-right:2px;letter-spacing:0}
+@media(max-width:760px){
+  .maple{grid-template-columns:44% 1fr}
+  .maple img{grid-row:auto}
+  .maple-info{flex-direction:column;align-items:flex-start;gap:4px;margin-top:0;padding-top:0;border-top:0}
+  .maple-price{font-size:2.3rem}
+  .maple-info h3,.maple-info .maple-price{align-self:flex-start}
+}
+.button-cream-outline{background:transparent;color:var(--green);border-color:currentColor}
+.button-cream-outline:hover{background:var(--green);color:var(--cream)}
+.find-social{margin-top:28px}

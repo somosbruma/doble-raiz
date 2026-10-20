@@ -2,9 +2,9 @@
 document.documentElement.classList.add('has-js');
 // [CONFIRMAR CON LA CLIENTA: completar datos oficiales. No se crean contactos ficticios.]
 const SITE_CONFIG = {
-  whatsapp: '', // Código de país y número, solo dígitos.
+  whatsapp: '5492212046310', // Código de país y número, solo dígitos.
   email: '',
-  instagram: '', // URL https://www.instagram.com/... oficial.
+  instagram: 'https://www.instagram.com/dobleraiz_/', // URL https://www.instagram.com/... oficial.
   retailers: [] // { name: '...', address: '...', mapUrl: 'https://...' }
 };
 
