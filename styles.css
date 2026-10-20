@@ -316,3 +316,7 @@ h2{font-size:clamp(2.3rem,min(4.2vw,7.4vh),4.25rem)}
 .find-instagram:hover .find-instagram-icon{transform:rotate(-8deg) scale(1.06);background:var(--yellow)}
 .find-instagram:hover span:not(.visually-hidden){text-decoration-color:currentColor}
 @media(max-width:760px){.find-instagram{display:flex;width:fit-content;margin-inline:auto}}
+/* Maples: size and price sit together, centered under the photo. */
+.maple-info{justify-content:center;gap:14px;border-top:0;padding-top:0;margin-top:18px}
+.faq-list details p a{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:760px){.maple-info{justify-content:center;margin-top:0}}
